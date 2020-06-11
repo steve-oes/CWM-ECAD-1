@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Tue Jun  9 18:16:39 2020
+[*]
+[dumpfile] "/home/stevesheard/verilog/ecad/work/Ex5/dump.vcd"
+[dumpfile_mtime] "Tue Jun  9 18:16:22 2020"
+[dumpfile_size] 883
+[savefile] "/home/stevesheard/verilog/ecad/work/Ex5/top_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-6.023445 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_tb.
+[sst_width] 258
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 138
+@28
+top_tb.top.clk
+top_tb.top.red
+top_tb.top.amber
+@29
+top_tb.top.green
+[pattern_trace] 1
+[pattern_trace] 0
