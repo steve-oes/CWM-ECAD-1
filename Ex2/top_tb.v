@@ -22,6 +22,8 @@ module top_tb(
     //Clock generation
     initial
     begin
+       $dumpfile("dump.vcd");
+       $dumpvars;
        clk = 1'b0;
        forever
          #(CLK_PERIOD/2) clk=~clk;
@@ -57,7 +59,7 @@ module top_tb(
           
       //Finish simulation and check for success
       initial begin
-        #50 
+        #100 
         if (err==0)
           $display("***TEST PASSED! :) ***");
         $finish;
@@ -71,4 +73,4 @@ module top_tb(
      .out (out)
      );
      
-endmodule 
+endmodule

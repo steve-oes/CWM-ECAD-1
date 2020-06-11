@@ -13,16 +13,42 @@
 module top_tb(
     );
     
-//Todo: Parameters
-
-//Todo: Regitsers and wires
-
-//Todo: Clock generation
-
-//Todo: User logic
+    parameter CLK_PERIOD = 10;
+    reg clk;
+    reg rst;
+    reg direction;
+    reg enable;
+    wire [7:0] count;
     
-//Todo: Finish test, check for success
+    initial begin
+    	$dumpfile("dump.vcd");
+    	$dumpvars;
+        clk = 1'b0;
+        forever
+        	#(CLK_PERIOD/2) clk=~clk;
+     end
+    
+     initial begin
+       rst       = 0;
+       enable    = 0;
+       direction = 1;
+       #(5*CLK_PERIOD)
+       rst       = 1;
+       #(5*CLK_PERIOD)
+       rst       = 0;
+       #(5*CLK_PERIOD)
+       enable    = 1;
+       #(15*CLK_PERIOD)
+       direction  = 0;
+       #(15*CLK_PERIOD)
+       rst       = 1;
+       #(5*CLK_PERIOD)
+       rst       = 0;
+     end
+     
+     counter top (rst,enable,direction,clk,count);
+     
+     initial #600 $finish;
 
-//Todo: Instantiate counter module
  
 endmodule 

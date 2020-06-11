@@ -26,6 +26,8 @@ module top_tb(
     //An initial block that creates the clock
     initial
     begin
+    	$dumpfile("dump.vcd");
+    	$dumpvars;
        clk = 1'b0;
        forever
          #(CLK_PERIOD/2) clk=~clk;

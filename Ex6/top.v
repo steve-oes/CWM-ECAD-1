@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #6 
-// Student Name:
-// Date: 
+// Student Name: Steve Sheard
+// Date: 09-06-20
 //
 //
 //  Description: In this exercise, you need to design a multiplexer between a dice and traffic 
@@ -20,3 +20,20 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
+module top (
+	input sel,
+	input clk,
+	input rst,
+	input button,
+	output [2:0] out
+	);
+	
+	wire [2:0] out,dice_out;
+	
+	assign out = sel?{red,amber,green}:dice_out;
+	
+	dice I1 (.rst(rst),.clk(clk),.button(button),.throw(dice_out));
+	traffic_lights I2 (clk,red,amber,green);
+	
+endmodule
+	

@@ -16,3 +16,16 @@
 //  You need to write the whole file.
 //////////////////////////////////////////////////////////////////////////////////
 
+module dice (clk, rst, button, throw);
+	input clk, rst, button;
+	output reg[2:0] throw;
+	
+	always @(posedge rst)
+		if (rst) throw = 3'b001;
+	always @(posedge clk)
+		throw = (!rst&button)?throw+1:throw;
+	always @(throw)
+		if ((throw==3'b000)||(throw==3'b111)) throw = 3'b001;
+		
+endmodule
+		
